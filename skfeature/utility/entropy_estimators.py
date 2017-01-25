@@ -114,9 +114,10 @@ def cmidd(x, y, z):
 def hist(sx):
     # Histogram from list of samples
     d = dict()
+    sx = list(sx)
     for s in sx:
         d[s] = d.get(s, 0) + 1
-    return map(lambda z: float(z)/len(sx), d.values())
+    return list(map(lambda z: float(z)/len(sx), d.values()))
 
 
 def entropyfromprobs(probs, base=2):
